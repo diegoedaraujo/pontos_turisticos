@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'atracoes',
     'comentarios',
     'enderecos',
+    'avaliacoes',
     'django_filters',
 ]
 

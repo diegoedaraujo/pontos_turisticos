@@ -20,12 +20,14 @@ from django.conf.urls import include
 from atracoes.api.viewsets import AtracaoViewSet
 from comentarios.api.viewsets import ComentarioViewSet
 from enderecos.api.viewsets import EnderecoViewSet
+from avaliacoes.api.viewsets import AvaliacaoViewSet
 
 
 router = routers.DefaultRouter()
 router.register(r'atracoes', AtracaoViewSet)
 router.register(r'comentarios', ComentarioViewSet)
 router.register(r'enderecos', EnderecoViewSet)
+router.register(r'avaliacoes', AvaliacaoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
