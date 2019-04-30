@@ -19,11 +19,13 @@ from rest_framework import routers
 from django.conf.urls import include
 from atracoes.api.viewsets import AtracaoViewSet
 from comentarios.api.viewsets import ComentarioViewSet
+from enderecos.api.viewsets import EnderecoViewSet
 
 
 router = routers.DefaultRouter()
 router.register(r'atracoes', AtracaoViewSet)
 router.register(r'comentarios', ComentarioViewSet)
+router.register(r'enderecos', EnderecoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

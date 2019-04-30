@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'atracoes',
     'comentarios',
+    'enderecos',
     'django_filters',
 ]
 
