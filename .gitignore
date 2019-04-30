@@ -2,3 +2,4 @@ __pycache__/
 .mypy_cache/
 .idea/
 pontos_turisticos_env
+.vscode
