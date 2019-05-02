@@ -3,7 +3,8 @@ from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
 from core.models import PontoTuristico
-from core.api.serializers import PontoTuristicoSerializer
+from .serializers import PontoTuristicoSerializer
+
 
 class PontoTuristicoViewSet(ModelViewSet):
     """
@@ -20,6 +21,13 @@ class PontoTuristicoViewSet(ModelViewSet):
         descricao = self.request.query_params.get('descricao', None)
         queryset = PontoTuristico.objects.all()
 
-        data = {'id': id, 'nome__iexact': nome, 'descricao__iexact': descricao}
-        queryset = queryset.filter(**data)
+        if id:
+            queryset = PontoTuristico.objects.filter(pk=id)
 
+        if nome:
+            queryset = queryset.filter(nome__iexact=nome)
+
+        if descricao:
+            queryset = queryset.filter(descricao__iexact=descricao)
+
+        return queryset

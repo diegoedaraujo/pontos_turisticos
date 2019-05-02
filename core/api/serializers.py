@@ -18,8 +18,12 @@ class PontoTuristicoSerializer(ModelSerializer):
 
     class Meta:
         model = PontoTuristico
-        fields = '__all__'
-        read_only_fields = ('comentarios')
+        fields = (
+            'id', 'nome', 'descricao', 'aprovado', 'foto',
+            'atracoes', 'comentarios', 'avaliacoes', 'endereco',
+            'descricao_completa', 'descricao_completa2', 'doc_identificacao'
+        )
+        read_only_fields = ('comentarios', )
 
     def cria_atracoes(self, atracoes, ponto):
         for atracao in atracoes:
