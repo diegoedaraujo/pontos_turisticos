@@ -31,3 +31,6 @@ class PontoTuristicoViewSet(ModelViewSet):
             queryset = queryset.filter(descricao__iexact=descricao)
 
         return queryset
+
+    def list(self, request, *args, **kwargs):
+        return super(PontoTuristicoViewSet, self).list(request, *args, **kwargs)
